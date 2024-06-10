@@ -40,7 +40,7 @@ header {
 /* Styling for the swim lanes */
 .lane {
   background-color: #e9ecef;
-  border: 1px solid #acacac;
+  border: 1px solid #828282;
   border-radius: 0.25rem;
 }
 
@@ -56,7 +56,7 @@ header {
 
 /* Hover effect when a task card is being dragged over a droppable area */
 .bg-secondary {
-  background-color: #6c757d !important;
+  background-color: #7b7b7b !important;
 }
 
 /* Adding padding and text alignment to the container */
