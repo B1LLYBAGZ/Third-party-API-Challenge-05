@@ -6,8 +6,16 @@ let nextId = JSON.parse(localStorage.getItem("nextId")) || 1;
 
 // Create a function to generate a unique task id
 function generateTaskId() {
-  return nextId++;
+  const currentDate = dayjs().format("YYYYMMDD"); // Get the current date in YYYYMMDD format
+  const currentTime = dayjs().format("HHmmss"); // Get the current time in HHmmss format
+  const uniqueId = `${currentDate}-${currentTime}`; // Combine date and time components
+
+  return uniqueId;
 }
+
+// Example usage
+const taskId = generateTaskId();
+console.log(taskId);
 
 // Create a function to create a task card
 function createTaskCard(task) {
