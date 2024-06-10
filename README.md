@@ -20,5 +20,5 @@ A simple Kanban board for task management.
 
 ## Running the website
 
-- The URL to the website is:
+- The URL to the website is: https://b1llybagz.github.io/Third-party-API-Challenge-05/
 - The GitHub Repos URL is: https://github.com/B1LLYBAGZ/Third-party-API-Challenge-05

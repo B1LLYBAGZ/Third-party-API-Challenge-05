@@ -34,13 +34,13 @@ header {
 /* Styling for the card header */
 .card-header {
   background-color: #343a40;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 /* Styling for the swim lanes */
 .lane {
   background-color: #e9ecef;
-  border: 1px solid #ced4da;
+  border: 1px solid #acacac;
   border-radius: 0.25rem;
 }
 
