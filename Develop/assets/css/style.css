@@ -1,0 +1,86 @@
+/* General styles for the body */
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #f8f9fa;
+  color: #343a40;
+  margin: 0;
+  padding: 0;
+}
+
+/* Styles for the header section */
+header {
+  background-color: #343a40;
+  color: white;
+}
+
+/* Styling the task cards */
+.task-card {
+  cursor: move;
+  transition: background-color 0.3s ease;
+}
+
+/* Styling for overdue tasks */
+.task-card.overdue {
+  background-color: #f8d7da;
+  border-color: #ff485a;
+}
+
+/* Styling for tasks due soon */
+.task-card.due-soon {
+  background-color: #fff3cd;
+  border-color: #ffd045;
+}
+
+/* Styling for the card header */
+.card-header {
+  background-color: #343a40;
+  color: white;
+}
+
+/* Styling for the swim lanes */
+.lane {
+  background-color: #e9ecef;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+}
+
+/* Adding some margin to the task cards */
+.mb-3 {
+  margin-bottom: 1rem !important;
+}
+
+/* Making the task cards draggable */
+.dragging {
+  opacity: 0.5;
+}
+
+/* Hover effect when a task card is being dragged over a droppable area */
+.bg-secondary {
+  background-color: #6c757d !important;
+}
+
+/* Adding padding and text alignment to the container */
+.container {
+  padding: 20px;
+  text-align: center;
+}
+
+/* Adding some margin to the top of the task form */
+#task-form {
+  margin-top: 10px;
+}
+
+/* Styling the modal body */
+.modal-body {
+  padding: 2rem;
+}
+
+/* Styling the delete button */
+.btn-danger {
+  margin-top: 10px;
+}
+
+/* Styling for the date picker field */
+#task-due-date {
+  cursor: pointer;
+}
