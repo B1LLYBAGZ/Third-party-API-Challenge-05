@@ -13,7 +13,6 @@ function generateTaskId() {
   return uniqueId;
 }
 
-// Example usage
 const taskId = generateTaskId();
 console.log(taskId);
 
