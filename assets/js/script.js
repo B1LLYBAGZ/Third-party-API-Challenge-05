@@ -150,16 +150,28 @@ function handleDeleteTask(taskId) {
 function handleDrop(event, ui) {
   // Get the id of the dragged task
   const taskId = ui.draggable.attr("id").split("-")[1];
+  // Debugging: Log the taskId
+  // console.log("Dragged taskId:", taskId);
+
   // Get the new status from the drop target
   const newStatus = event.target.closest(".lane").id;
+  // Debugging: Log the new status
+  // console.log("New status:", newStatus);
 
   // Update the task's status
   const task = taskList.find((task) => task.id == taskId);
-  task.status = newStatus;
+  // Debugging: Log the task object
+  // console.log("Task found:", task);
 
-  // Save the updated task list to localStorage and re-render the task list
-  localStorage.setItem("tasks", JSON.stringify(taskList));
-  renderTaskList();
+  if (task) {
+    task.status = newStatus;
+
+    // Save the updated task list to localStorage and re-render the task list
+    localStorage.setItem("tasks", JSON.stringify(taskList));
+    renderTaskList();
+  } else {
+    console.error("Task not found for taskId:", taskId);
+  }
 }
 
 // Make task cards draggable
