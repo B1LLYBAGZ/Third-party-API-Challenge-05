@@ -6,15 +6,8 @@ let nextId = JSON.parse(localStorage.getItem("nextId")) || 1;
 
 // Create a function to generate a unique task id
 function generateTaskId() {
-  const currentDate = dayjs().format("YYYYMMDD"); // Get the current date in YYYYMMDD format
-  const currentTime = dayjs().format("HHmmss"); // Get the current time in HHmmss format
-  const uniqueId = `${currentDate}-${currentTime}`; // Combine date and time components
-
-  return uniqueId;
+  return nextId++;
 }
-
-const taskId = generateTaskId();
-console.log(taskId);
 
 // Create a function to create a task card
 function createTaskCard(task) {
@@ -150,28 +143,16 @@ function handleDeleteTask(taskId) {
 function handleDrop(event, ui) {
   // Get the id of the dragged task
   const taskId = ui.draggable.attr("id").split("-")[1];
-  // Debugging: Log the taskId
-  // console.log("Dragged taskId:", taskId);
-
   // Get the new status from the drop target
   const newStatus = event.target.closest(".lane").id;
-  // Debugging: Log the new status
-  // console.log("New status:", newStatus);
 
   // Update the task's status
   const task = taskList.find((task) => task.id == taskId);
-  // Debugging: Log the task object
-  // console.log("Task found:", task);
+  task.status = newStatus;
 
-  if (task) {
-    task.status = newStatus;
-
-    // Save the updated task list to localStorage and re-render the task list
-    localStorage.setItem("tasks", JSON.stringify(taskList));
-    renderTaskList();
-  } else {
-    console.error("Task not found for taskId:", taskId);
-  }
+  // Save the updated task list to localStorage and re-render the task list
+  localStorage.setItem("tasks", JSON.stringify(taskList));
+  renderTaskList();
 }
 
 // Make task cards draggable
